@@ -21,5 +21,11 @@ public class BasicTest {
 		Assert.assertTrue(false);
 		System.out.println("Testing1234");
 	}
+	
+	@Test
+	public void newyear() 
+	{
+		System.out.println("Happy New Year");
+	}
 }
 
