@@ -1,0 +1,25 @@
+package TestPackage;
+
+import org.testng.annotations.Test;
+
+public class MortgageLoan {
+	
+	@Test
+	public void MortgageLoanWebLogin()
+	{
+		System.out.println("MortgageLoan from WEB");
+	}
+	
+	@Test
+	public void MortgageLoanAPPLogin()
+	{
+		System.out.println("MortgageLoan from APP");
+	}
+	
+	@Test
+	public void MortgageLoanBranchLogin()
+	{
+		System.out.println("MortgageLoan from Branch");
+	}
+
+}

@@ -1,0 +1,26 @@
+package TestPackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+
+public class CarLease extends TestAnnotations{
+	
+	@Test(groups= {"sanity"})
+	public void CarLeaseWebLogin()
+	{
+		System.out.println("CarLease from WEB");
+	}
+	
+	@Test(groups= {"regression"})
+	public void CarLeaseAPPLogin()
+	{
+		System.out.println("CarLease from APP");
+	}
+	
+	@Test
+	public void CarLeaseBranchLogin()
+	{
+		System.out.println("CarLease from Branch");
+	}
+
+}

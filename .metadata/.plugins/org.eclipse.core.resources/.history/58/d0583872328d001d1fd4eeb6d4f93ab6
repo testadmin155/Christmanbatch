@@ -1,0 +1,25 @@
+package TestPackage;
+
+import org.testng.annotations.Test;
+
+public class SmartLoan {
+	
+	@Test
+	public void SmartLoanWebLogin()
+	{
+		System.out.println("SmartLoan from WEB");
+	}
+	
+	@Test
+	public void SmartLoanAPPLogin()
+	{
+		System.out.println("SmartLoan from APP");
+	}
+	
+	@Test
+	public void SmartLoanBranchLogin()
+	{
+		System.out.println("SmartLoan from Branch");
+	}
+
+}

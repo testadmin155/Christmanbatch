@@ -1,0 +1,10 @@
+package TestPackage;
+
+public class BasicTest {
+
+	
+	public void Demo()
+	{
+		System.out.println("hello");
+	}
+}

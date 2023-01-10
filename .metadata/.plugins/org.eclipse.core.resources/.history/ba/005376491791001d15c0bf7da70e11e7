@@ -1,0 +1,31 @@
+package TestPackage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class readData {
+
+	public static void main(String[] args) throws IOException {
+		
+		//create an object to read the properties
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("E:\\Testing Session\\SeleniumTraining\\ChristmasBatch\\Framework\\data.properties");
+		
+		prop.load(fis);
+		
+		//script to read the data from property file
+		System.out.println(prop.getProperty("username"));
+		System.out.println(prop.getProperty("url"));
+		System.out.println(prop.getProperty("place"));
+		
+		
+		//script to write data to property file
+		prop.setProperty("country", "Belgium");
+		prop.setProperty("AutomationTool", "Selenium");
+		
+		prop.getProperty(country);
+	}
+
+}

@@ -1,0 +1,26 @@
+package TestPackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+
+public class SmartLoan {
+	
+	@Test(priority=1)
+	public void SmartLoanWebLogin()
+	{
+		System.out.println("SmartLoan from WEB");
+	}
+	
+	@Test(groups= {"regression"},priority=2)
+	public void SmartLoanAPPLogin()
+	{
+		System.out.println("SmartLoan from APP");
+	}
+	
+	@Test(priority=0)
+	public void SmartLoanBranchLogin()
+	{
+		System.out.println("SmartLoan from Branch");
+	}
+
+}

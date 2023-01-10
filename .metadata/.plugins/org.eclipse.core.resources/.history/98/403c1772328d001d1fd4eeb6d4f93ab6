@@ -1,0 +1,25 @@
+package TestPackage;
+
+import org.testng.annotations.Test;
+
+public class FlexiLoan {
+	
+	@Test
+	public void FlexiLoanWebLogin()
+	{
+		System.out.println("FlexiLoan from WEB");
+	}
+	
+	@Test
+	public void FlexiLoanAPPLogin()
+	{
+		System.out.println("FlexiLoan from APP");
+	}
+	
+	@Test
+	public void FlexiLoanBranchLogin()
+	{
+		System.out.println("FlexiLoan from Branch");
+	}
+
+}

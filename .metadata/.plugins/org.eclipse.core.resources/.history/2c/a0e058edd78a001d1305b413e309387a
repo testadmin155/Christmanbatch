@@ -1,0 +1,81 @@
+package FirstScript;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Calender {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "E:\\Testing Session\\SeleniumTraining\\BrowserDrivers\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://book.spicejet.com/");
+		driver.manage().window().maximize();
+		String reqday="10";
+		String reqmonth="July 2023";
+		
+		//driver.findElement(By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_RoundTrip")).click();
+	
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();",driver.findElement(By.id("custom_date_picker_id_1")));
+		Thread.sleep(2000);
+
+		for (int headers=1; headers<10;headers++)
+		{
+			
+		String firstHeader = driver.findElement(By.xpath("//div[contains(@class,'ui-datepicker-group-first')]/div/div")).getText();
+		System.out.println(firstHeader);
+		
+		String secondHeader = driver.findElement(By.xpath("//div[contains(@class,'ui-datepicker-group-last')]/div/div")).getText();
+		System.out.println(secondHeader);
+		
+		if (firstHeader.equals(reqmonth))
+		{
+			List<WebElement> alldays = driver.findElements(By.xpath("//div[contains(@class,'ui-datepicker-group-first')] //a[@class='ui-state-default']"));
+			System.out.println(alldays.size());
+			for (WebElement day:alldays)
+			{
+				System.out.println(day.getText());
+				if(day.getText().equals(reqday))
+				{
+					day.click();
+					break;
+				}
+			}
+			
+		}
+			else if (secondHeader.equals(reqmonth))
+			{
+				
+				List<WebElement> alldays = driver.findElements(By.xpath("//div[contains(@class,'ui-datepicker-group-last')] //a[@class='ui-state-default']"));
+				System.out.println(alldays.size());
+				for (WebElement day:alldays)
+				{
+					System.out.println(day.getText());
+					if(day.getText().equals(reqday))
+					{
+						day.click();
+						break;
+					}
+				}
+				
+			
+		}
+		
+			else
+			{
+				driver.findElement(By.xpath("//span[contains(@class,'ui-icon-circle-triangle-e')]")).click();
+			}
+		
+break;
+	}
+	
+	}
+
+}

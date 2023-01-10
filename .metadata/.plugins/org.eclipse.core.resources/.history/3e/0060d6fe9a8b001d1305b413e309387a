@@ -1,0 +1,32 @@
+package FirstScript;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Alerts {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "E:\\Testing Session\\SeleniumTraining\\BrowserDrivers\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://demo.automationtesting.in/Alerts.html");
+		driver.manage().window().maximize();
+		
+		/*driver.findElement(By.xpath("//button[contains(@class,'btn-danger')]")).click();
+		String textmessage=driver.switchTo().alert().getText();
+		System.out.println(textmessage);
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		*/
+		
+		driver.findElement(By.xpath("//ul[contains(@class,'nav-tabs')]/li[2]")).click();
+		driver.findElement(By.xpath("//button[@onclick='confirmbox()']")).click();
+		System.out.println(driver.switchTo().alert().getText());
+		//driver.switchTo().alert().accept();
+		driver.switchTo().alert().dismiss();
+		System.out.println(driver.findElement(By.id("demo")).getText());
+
+	}
+
+}
